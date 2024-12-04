@@ -32,9 +32,9 @@
 						<suiteXmlFile>testng.xml</suiteXmlFile>
 					</suiteXmlFiles>
 					<systemPropertyVariables>
-						<browser>chrome</browser>
-						<isLambdaTest>true</isLambdaTest>
-						<isHeadless>true</isHeadless>
+						<browser>${browser}</browser>
+						<isLambdaTest>${isLambdaTest}</isLambdaTest>
+						<isHeadless>${isHeadless}</isHeadless>
 					</systemPropertyVariables>
 				</configuration>
 			</plugin>
@@ -93,6 +93,10 @@
 			<artifactId>extentreports</artifactId>
 			<version>5.1.2</version>
 		</dependency>
-
+		<dependency>
+			<groupId>com.github.javafaker</groupId>
+			<artifactId>javafaker</artifactId>
+			<version>1.0.2</version>
+		</dependency>
 	</dependencies>
 </project>

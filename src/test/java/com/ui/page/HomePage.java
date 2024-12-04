@@ -8,9 +8,10 @@ import org.openqa.selenium.WebDriver;
 
 import com.constant.Browser;
 import com.utilities.BrowserUtility;
+import com.utilities.JSONUtility;
 import com.utilities.LoggerUtility;
 
-import static com.utilities.JSONUtility.*;
+
 //child classes always to use final keyword
 public final class HomePage extends BrowserUtility {
 	//Page Object Design Pattern->The way u create classes
@@ -21,21 +22,15 @@ public final class HomePage extends BrowserUtility {
 	//HomePage Constructor can be called when we create object of the child class
 	private static final By SIGN_IN_LINK_LOCATOR=By.xpath("//a[@class='login']");
 	Logger logger = LoggerUtility.getLogger(this.getClass());
-	public HomePage(Browser browserName, boolean isHeadless) {
-		super(browserName,isHeadless);//To call the parent class constructor from the child constructor
-		//goToWebSite(readProperties(QA, "URL"));
-		goToWebSite(readJSON(QA).getUrl());
-
-
-
+	
+	public HomePage(Browser browser, boolean isHeadless) {
+		super(browser, isHeadless); // To Call the Parent Class constructor from the child constructor
+		goToWebsite(JSONUtility.readJSON(QA).getUrl());
 	}
+
 	public HomePage(WebDriver driver) {
-		super(driver);//To call the parent class constructor from the child constructor
-		//goToWebSite(readProperties(QA, "URL"));
-		goToWebSite(readJSON(QA).getUrl());
-
-
-
+		super(driver); // To Call the Parent Class constructor from the child constructor
+		goToWebsite(JSONUtility.readJSON(QA).getUrl());
 	}
 
 

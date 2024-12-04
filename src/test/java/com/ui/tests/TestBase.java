@@ -24,7 +24,7 @@ public class TestBase {
 			//@Optional used to run by java file instead of testng.xml
 		@Optional("chrome")	String browser,
 		@Optional("false") boolean isLambdaTest,
-		@Optional("true") boolean isHeadless, ITestResult result) {
+		@Optional("false") boolean isHeadless, ITestResult result) {
 	  this.isLambdaTest=isLambdaTest;
 	  
 		WebDriver lambdaDriver;

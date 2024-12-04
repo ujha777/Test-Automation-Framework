@@ -50,7 +50,7 @@ public class TestListeners implements ITestListener {
 		Object testclass = result.getInstance();
 		BrowserUtility browserUtility = ((TestBase)testclass).getInstance();
 		logger.info("Capturing Screenshot for the failed tests");
-		String screenshotPath=browserUtility.takeScreenshot(result.getMethod().getMethodName());
+		String screenshotPath = browserUtility.takeScreenShot(result.getMethod().getMethodName());
 		logger.info("Attaching the screenshot in HTML Report");
 		ExtentReporterUtility.getTest().addScreenCaptureFromPath(screenshotPath);
 	}
